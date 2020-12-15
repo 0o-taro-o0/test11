@@ -1,95 +1,95 @@
-#!/usr/local/bin/perl
+#!https://0o-taro-o0.github.io/test11
 
 #=====================================================================
-# ���
+# 題目
 #=====================================================================
-#   ��    ��: WwwMail Ver3.28
-#   �ŏI�X�V: 2008�N6��1��
-#   �� �� ��: �m��X
-#   ��    ��: �t���[�\�t�g�i���p�E���p���킸���p�E�����E���p�E�Ĕz�z�j
-#   �� �V ��: http://tohoho.wakusei.ne.jp/
+#   名    称: WwwMail Ver3.28
+#   最終更新: 2008年6月1日
+#   作 成 者: 杜甫々
+#   種    別: フリーソフト（私用・商用を問わず利用・改造・流用・再配布可）
+#   最 新 版: http://tohoho.wakusei.ne.jp/
 
 #=====================================================================
-# �J�X�^�}�C�Y
+# カスタマイズ
 #=====================================================================
-# �� perl�̃p�X��
-#    ���̃t�@�C���̐擪�̂P�s���A���Ȃ������p����T�[�o�[�ɃC���X�g�[
-#    �����ꂽ perl �R�}���h�̃p�X���ɉ����ĕύX���Ă��������B�Ⴆ�΁A
-#    �����������Ă��� BIGLOBE �ł́A#!/usr/local/bin/perl �ƂȂ�܂��B
-#    ����Ȃ��ꍇ�́A�v���o�C�_��T�[�o�̊Ǘ��҂ɂ��₢���킹���������B
-#   �u#!�v�̑O�ɂ́A�󕶎����s�⑼�̕������͂���Ȃ��悤�ɂ��Ă��������B
+# ★ perlのパス名
+#    このファイルの先頭の１行を、あなたが利用するサーバーにインストー
+#    ルされた perl コマンドのパス名に応じて変更してください。例えば、
+#    私が加入している BIGLOBE では、#!/usr/local/bin/perl となります。
+#    解らない場合は、プロバイダやサーバの管理者にお問い合わせください。
+#   「#!」の前には、空文字や空行や他の文字がはいらないようにしてください。
 
-# �� ���M�惁�[���A�h���X
-#    $mailto = 'abc@xxx.yyy.zzz'; �̂悤�ɂ��Ȃ��̃��[���A�h���X��
-#    ���������Ă��������B
+# ★ 送信先メールアドレス
+#    $mailto = 'abc@xxx.yyy.zzz'; のようにあなたのメールアドレスに
+#    書き換えてください。
 $mailto = 'i063rb@yamaguchi-u.ac.jp';
 
-# �� �T�u�W�F�N�g(����)
-#    ���M����郁�[���̃T�u�W�F�N�g���w�肵�Ă��������B
-$subject = 'WwwMail����̃��[��';
+# ★ サブジェクト(件名)
+#    送信されるメールのサブジェクトを指定してください。
+$subject = 'testメール';
 
-# �� ���[�����M�R�}���h
-#    Web�T�[�o�[��UNIX�̏ꍇ��sendmail�R�}���h�AWindows�n�̏ꍇ��BLATJ.EXE
-#    �R�}���h�̃p�X�����w��i$mailcmd = 'C:\BLATJ\BLATJ.EXE'; �Ȃǁj���Ă�
-#    �������B���̃R�}���h�����݂��Ȃ��ꍇ�́AWwwMail �͓��삵�܂���B�܂��A
-#    ���݂��Ă��Ă��A���[�����M�̐ݒ肪�s���Ă��Ȃ��ꍇ������܂��B�ڍ�
-#    �̓v���o�C�_��T�[�o�[�̊Ǘ��҂ɂ��₢���킹���������B
+# ★ メール送信コマンド
+#    WebサーバーがUNIXの場合はsendmailコマンド、Windows系の場合はBLATJ.EXE
+#    コマンドのパス名を指定（$mailcmd = 'C:\BLATJ\BLATJ.EXE'; など）してく
+#    ださい。このコマンドが存在しない場合は、WwwMail は動作しません。また、
+#    存在していても、メール送信の設定が行われていない場合があります。詳細
+#    はプロバイダやサーバーの管理者にお問い合わせください。
 $mailcmd = '/usr/lib/sendmail';
 
-# �� -f�I�v�V�����̗L��
-#    sendmail�R�}���h��-f�I�v�V�������g�p���Ȃ��ꍇ�́A�l�� 1 ���� 0 ��
-#    �ύX���Ă��������B
+# ★ -fオプションの有無
+#    sendmailコマンドに-fオプションを使用しない場合は、値を 1 から 0 に
+#    変更してください。
 $usefoption = 1;
 
-# �� ���M���ʃ��b�Z�[�W(�w�b�_)
-#    <<END_OF_DATA �` END_OF_DATA �̊Ԃ��D�݂ɂ��킹�ĕύX���Ă��������B
+# ★ 送信結果メッセージ(ヘッダ)
+#    <<END_OF_DATA ～ END_OF_DATA の間を好みにあわせて変更してください。
 $header = <<END_OF_DATA;
 <html>
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=Shift_JIS">
-<title>���[�����M����</title>
+<title>メール送信結果</title>
 </head>
 <body>
-<h1>���[�����M����</h1>
+<h1>メール送信結果</h1>
 <hr>
-<p>���L�̃��[���𑗐M���܂����B���肪�Ƃ��������܂����B</p>
+<p>下記のメールを送信しました。ありがとうございました。</p>
 <hr>
 END_OF_DATA
 
-# �� ���M���ʃ��b�Z�[�W(�t�b�^)
-#    <<END_OF_DATA �` END_OF_DATA �̊Ԃ��D�݂ɂ��킹�ĕύX���Ă��������B
+# ★ 送信結果メッセージ(フッタ)
+#    <<END_OF_DATA ～ END_OF_DATA の間を好みにあわせて変更してください。
 $footer = <<END_OF_DATA;
 <hr>
-<a href="../index.htm">[�߂�]</a>
+<a href="../index.htm">[戻る]</a>
 </body>
 </html>
 END_OF_DATA
 
 #====================================================================
-# ���Ȑf�f�@�\�B
+# 自己診断機能。
 #====================================================================
-# ���[�����M�����܂����삵�Ȃ����ɁA
-# http://�`/�`/wwwmail.cgi?test �̌`���ŌĂяo���Ă��������B
+# メール送信がうまく動作しない時に、
+# http://～/～/wwwmail.cgi?test の形式で呼び出してください。
 if ($ENV{'REQUEST_METHOD'} eq "GET") {
 	print "Content-type: text/html; charset=Shift_JIS\n";
 	print "\n";
 	print "<html>\n";
 	print "<head>\n";
-	print "<title>WwwMail���Ȑf�f</title>\n";
+	print "<title>WwwMail自己診断</title>\n";
 	print "</head>\n";
 	print "<body>\n";
-	print "<p>CGI�͐���ɓ��삵�Ă��܂��B</p>\n";
+	print "<p>CGIは正常に動作しています。</p>\n";
 	unless (-f $mailcmd) {
-		print "<p>$mailcmd ������܂���B</p>\n";
+		print "<p>$mailcmd がありません。</p>\n";
 	}
 	unless (-x $mailcmd) {
-		print "<p>$mailcmd �����s�\�ł͂���܂���B</p>\n";
+		print "<p>$mailcmd が実行可能ではありません。</p>\n";
 	}
 	unless (-f "jcode.pl") {
-		print "<p>jcode.pl ������܂���B</p>\n";
+		print "<p>jcode.pl がありません。</p>\n";
 	}
 	unless (-f "mimew.pl") {
-		print "<p>mimew.pl ������܂���B</p>\n";
+		print "<p>mimew.pl がありません。</p>\n";
 	}
 	print "</body>\n";
 	print "</html>\n";
@@ -97,17 +97,17 @@ if ($ENV{'REQUEST_METHOD'} eq "GET") {
 }
 
 #====================================================================
-# �{��
+# 本体
 #====================================================================
 
 #
-# ���C�u�����̌Ăяo��
+# ライブラリの呼び出し
 #
 require "jcode.pl";
 require "mimew.pl";
 
 #
-# ���͒l��ǂݎ��
+# 入力値を読み取る
 #
 if ($ENV{'REQUEST_METHOD'} eq "POST") {
 	read(STDIN, $query_string, $ENV{'CONTENT_LENGTH'});
@@ -131,14 +131,14 @@ if ($ENV{'REQUEST_METHOD'} eq "POST") {
 }
 
 #
-# EMAIL������ȃ��[�����ǂꂷ���ǂ������f����
+# EMAILが正常なメールあどれすかどうか判断する
 #
 if ($FORM{'EMAIL'} =~ /^[-_\.a-zA-Z0-9]+\@[-_\.a-zA-Z0-9]+$/) {
 	$mailfrom = $FORM{'EMAIL'};
 }
 
 #
-# ���[���w�b�_���쐬����
+# メールヘッダを作成する
 #
 {
 	&jcode'convert(*subject, "jis");
@@ -158,23 +158,23 @@ if ($FORM{'EMAIL'} =~ /^[-_\.a-zA-Z0-9]+\@[-_\.a-zA-Z0-9]+$/) {
 }
 
 #
-# ���[���{�f�B���쐬����
+# メールボディを作成する
 #
 {
 	for ($i = 0; $i < $cnt; $i++) {
 		$mailbody .= "$FORM[$i] = $FORM{$FORM[$i]}\n";
 	}
 
-	# "." �݂̂̍s�� ". " �ɕϊ�����B
-	# 2��J��Ԃ��Ȃ��ƁA2�s�A���� "." �݂̂̍s�ɑΉ��ł��Ȃ�
-	# "." �� ".." �ɕϊ����鏈������ʓI�����������A�����āA
-	# "." �� ". " �ɕϊ�����B
+	# "." のみの行は ". " に変換する。
+	# 2回繰り返さないと、2行連続で "." のみの行に対応できない
+	# "." を ".." に変換する処理が一般的だそうだが、あえて、
+	# "." を ". " に変換する。
 	$mailbody =~ s/(^|\n)\.(\n|$)/$1. $2/g;
 	$mailbody =~ s/(^|\n)\.(\n|$)/$1. $2/g;
 }
 
 #
-# ���[���𑗐M����
+# メールを送信する
 #
 if ($mailcmd =~ /sendmail/) {
 	if ($usefoption == 0) {
@@ -183,13 +183,13 @@ if ($mailcmd =~ /sendmail/) {
 		$cmd = "$mailcmd -f $mailto -t";
 	}
 	unless (open(OUT, "| $cmd")) {
-		&errexit("���[���̑��M�Ɏ��s���܂����B(1)");
+		&errexit("メールの送信に失敗しました。(1)");
 	}
 	unless (print OUT &mimeencode($mailhead)) {
-		&errexit("���[���̑��M�Ɏ��s���܂����B(2)");
+		&errexit("メールの送信に失敗しました。(2)");
 	}
 	unless (print OUT $mailbody) {
-		&errexit("���[���̑��M�Ɏ��s���܂����B(3)");
+		&errexit("メールの送信に失敗しました。(3)");
 	}
 	close(OUT);
 } elsif ($mailcmd =~ /BLAT/i) {
@@ -203,20 +203,20 @@ if ($mailcmd =~ /sendmail/) {
 		$cmd .= " -f $mailfrom";
 	}
 	unless (open(OUT, "| $cmd > NUL:")) {
-		&errexit("���[���̑��M�Ɏ��s���܂����B(4)");
+		&errexit("メールの送信に失敗しました。(4)");
 	}
 	&jcode'convert(*mailbody, "sjis");
 	unless (print OUT $mailbody) {
-		&errexit("���[���̑��M�Ɏ��s���܂����B(5)");
+		&errexit("メールの送信に失敗しました。(5)");
 	}
 	&jcode'convert(*mailbody, "jis");
 	close(OUT);
 } else {
-	&errexit("���[�����M�R�}���h $mailcmd �����݂��܂���B");
+	&errexit("メール送信コマンド $mailcmd が存在しません。");
 }
 
 #
-# �u���E�U��ʂɑ��M���ʂ������o��
+# ブラウザ画面に送信結果を書き出す
 #
 {
 	&jcode'convert(*header, "sjis");
@@ -239,7 +239,7 @@ if ($mailcmd =~ /sendmail/) {
 }
 
 #
-# �G���[���b�Z�[�W���o�͂��ďI��
+# エラーメッセージを出力して終了
 #
 sub errexit {
 	local($err) = @_;
@@ -250,13 +250,13 @@ sub errexit {
 	$msg .= "<html>\n";
 	$msg .= "<head>\n";
 	$msg .= "<meta http-equiv=\"Content-type\" content=\"text/html; charset=Shift_JIS\">\n";
-	$msg .= "<title>���[�����M����</title>\n";
+	$msg .= "<title>メール送信結果</title>\n";
 	$msg .= "</head>\n";
 	$msg .= "<body>\n";
-	$msg .= "<h1>���[�����M����</h1>\n";
+	$msg .= "<h1>メール送信結果</h1>\n";
 	$msg .= "<hr>\n";
 	$msg .= "<p>$err</p>\n";
-	$msg .= "<p>�u���E�U�� [�߂�] �{�^���Ŗ߂��Ă��������B</p>\n";
+	$msg .= "<p>ブラウザの [戻る] ボタンで戻ってください。</p>\n";
 	$msg .= "<hr>\n";
 	$msg .= "</body>\n";
 	$msg .= "</html>\n";
