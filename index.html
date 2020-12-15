@@ -1,90 +1,246 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Progate</title>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-</head>
-<body>
-  <header>
-    <div class="container">
-      <div class="header-left">
-        <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
-      </div>
-      <span class="fa fa-bars menu-icon"></span>
-      <div class="header-right">
-        <a href="#">レッスン</a>
-        <a href="#">新規登録</a>
-        <a href="#" class="login">ログイン</a>
-      </div>
-    </div>
-  </header>
-  <div class="top-wrapper">
-    <div class="container">
-      <h1>LEARN TO CODE.<br>LEARN TO BE CREATIVE.</h1>
-      <p>Progateはオンラインプログラミング学習サービスです。<br>初心者にもやさしいスライドとレッスンで、ウェブサービスを作りながらプログラミングを学んでいきましょう。</p>
-      <div class="btn-wrapper">
-        <a href="#" class="btn signup">新規登録はこちら</a>
-        <p>or</p>
-        <a href="#" class="btn facebook"><span class="fa fa-facebook"></span>Facebookで登録</a>
-        <a href="#" class="btn twitter"><span class="fa fa-twitter"></span>Twitterで登録</a>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>Learn Where to Get Started!</h2>
-      </div>
-      <div class="lessons">
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/html.png">
-            <p>HTML & CSS</p>
+<html lang=ja dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>アンケート</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <!-- <link rel="stylesheet" href="normalize.css">　 -->
+  </head>
+  <body>
+    <header>
+      <h1>農業に関する意識調査</h1>
+      <p>こんにちは。私たちは、山口大学国際総合科学部のプロジェクト型課題解決研究（PBL）の一環として、山口県の農業の担い手不足について取り組んでいます。当アンケートは山口大学の学生を対象に、大学生の農業に対する意識調査を目的として実施しています。
+このアンケートの結果は、PBLでの研究活動のみで使用し、第三者へ情報を提供することもございませんので、回答にご協力宜しくお願い致します。
+<br>※当アンケートは回答者様の意思により途中で回答を止めることができます。
+<br>※また、回答したくない質問については、ご回答頂かなくても構いません。
+</p>
+    </header>
+    <main>
+      <form class="" action="index.html" method="post">
+        <section>
+          <h3>1. 基本情報</h3>
+          <div class="questions">
+            <p>学部:
+              <select class="" name="faculty">
+                <option value="jinbun">人文学部</option>
+                <option value="kyouiku">教育学部</option>
+                <option value="keizai">経済学部</option>
+                <option value="rigaku">理学部</option>
+                <option value="igaku">医学部</option>
+                <option value="kougaku">工学部</option>
+                <option value="nougaku">農学部</option>
+                <option value="jui">共同獣医学部</option>
+                <option value="kokusaisougoukagaku" selected>国際総合科学部</option>
+              </select>
+            </p>
+
+            <p>学年:
+              <select class="" name="grade">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3</option>
+                <option value="4">4</option>
+              </select>
+
+            </p>
+
+            <p>性別:
+              <select class="" name="gender">
+              <option value="male">男性</option>
+                <option value="female" selected>女性</option>
+              </select>
+            </p>
+
+            <p>実家が農家: <br>
+              <label><input type="radio" name="home" value="0">はい</input></label>
+              <label><input type="radio" name="home" value="1">いいえ</input></label>
+            </p>
+
+            <p>「はい」の方: <br>
+              <label><input type="radio" name="homeType" value="0">専業農家</input></label>
+              <label><input type="radio" name="homeType" value="1">兼業農家</input></label>
+          </p>
           </div>
-          <p class="text-contents">ウェブページの作成に使用される言語です。HTMLとCSSを組み合わせることで、静的なページを作り上げることができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/jQuery.png">
-            <p>jQuery</p>
+        </section>
+
+        <section>
+          <h3>2. 職業選択について</h3>
+          <div class="questions">
+            <p>
+              <label>現在、魅力を感じている職業は何ですか？<br>
+                <input type="text" name="occupation">
+              </label>
+            </p>
+            <p>
+              <label>なぜその仕事に魅力を感じていますか？<br>
+                <textarea name="occupationReason" rows="4" cols="80"></textarea>
+              </label>
+            </p>
+            <p>職業選択する上で何を重視しますか（複数回答可）<br>
+              <label><input type="checkbox" name="important" value="study">学んだことを活かせる</input></label>
+              <label><input type="checkbox" name="important" value="salary">給料</input></label>
+              <label><input type="checkbox" name="important" value="environment">職場環境</input></label>
+              <label><input type="checkbox" name="important" value="support">福利厚生</input></label>
+              <label><input type="checkbox" name="important" value="rewarding">やりがい</input></label>
+              <label><input type="checkbox" name="important" value="place">勤務地</input></label>
+              <label><input type="checkbox" name="important" value="others">その他</input>
+                <input type="text" name="importantOthers"></label>
+            </p>
           </div>
-          <p class="text-contents">素敵な動きを手軽に実装できるJavaScriptライブラリです。 アニメーション効果をつけたり、Ajax（エイジャックス）を使って外部ファイルを読み込んだりと色々なことができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/ruby.png">
-            <p>Ruby</p>
+        </section>
+
+        <section>
+          <h3>3. 農業に対するイメージ</h3>
+          <div class="questions  mail
+          Ó">
+          <p>農業に対してどのようなイメージを持ちますか？<br></p>
+          <p>日本の平均所得とり高い: <br>
+             <label><input type="radio" name="impression1" value="1">そう思う</input></label>
+             <label><input type="radio" name="impression1" value="2">まあそう思う</input></label>
+             <label><input type="radio" name="impression1" value="3">あまりそう思わない</input></label>
+             <label><input type="radio" name="impression1" value="4">そう思わない</input></label>
+          </p>
+          <p>3K（キツい、汚い、危険）: <br>
+             <label><input type="radio" name="impression2" value="1">そう思う</input></label>
+             <label><input type="radio" name="impression2" value="2">まあそう思う</input></label>
+             <label><input type="radio" name="impression2" value="3">あまりそう思わない</input></label>
+             <label><input type="radio" name="impression2" value="4">そう思わない</input></label>
+          </p>
+          <p>自然の中で仕事ができる: <br>
+             <label><input type="radio" name="impression3" value="1">そう思う</input></label>
+             <label><input type="radio" name="impression3" value="2">まあそう思う</input></label>
+             <label><input type="radio" name="impression3" value="3">あまりそう思わない</input></label>
+             <label><input type="radio" name="impression3" value="4">そう思わない</input></label>
+          </p>
+          <p>身体を動かせる: <br>
+             <label><input type="radio" name="impression4" value="1">そう思う</input></label>
+             <label><input type="radio" name="impression4" value="2">まあそう思う</input></label>
+             <label><input type="radio" name="impression4" value="3">あまりそう思わない</input></label>
+             <label><input type="radio" name="impression4" value="4">そう思わない</input></label>
+          </p>
+          <p>頭より身体を使う仕事である: <br>
+             <label><input type="radio" name="impression5" value="1">そう思う</input></label>
+             <label><input type="radio" name="impression5" value="2">まあそう思う</input></label>
+             <label><input type="radio" name="impression5" value="3">あまりそう思わない</input></label>
+             <label><input type="radio" name="impression5" value="4">そう思わない</input></label>
+          </p>
+          <p>大学で学んだことを活かせる: <br>
+             <label><input type="radio" name="impression6" value="1">そう思う</input></label>
+             <label><input type="radio" name="impression6" value="2">まあそう思う</input></label>
+             <label><input type="radio" name="impression6" value="3">あまりそう思わない</input></label>
+             <label><input type="radio" name="impression6" value="4">そう思わない</input></label>
+          </p>
+          <p>経営戦略が必要である: <br>
+             <label><input type="radio" name="impression7" value="1">そう思う</input></label>
+             <label><input type="radio" name="impression7" value="2">まあそう思う</input></label>
+             <label><input type="radio" name="impression7" value="3">あまりそう思わない</input></label>
+             <label><input type="radio" name="impression7" value="4">そう思わない</input></label>
+          </p>
+          <p>外的要因（天候、災害）に左右されやすい: <br>
+             <label><input type="radio" name="impression8" value="1">そう思う</input></label>
+             <label><input type="radio" name="impression8" value="2">まあそう思う</input></label>
+             <label><input type="radio" name="impression8" value="3">あまりそう思わない</input></label>
+             <label><input type="radio" name="impression8" value="4">そう思わない</input></label>
+          </p>
+          <p>かっこいい: <br>
+             <label><input type="radio" name="impression9" value="1">そう思う</input></label>
+             <label><input type="radio" name="impression9" value="2">まあそう思う</input></label>
+             <label><input type="radio" name="impression9" value="3">あまりそう思わない</input></label>
+             <label><input type="radio" name="impression9" value="4">そう思わない</input></label>
+          </p>
+          <p><label>その他: <br>
+            <textarea name="impressionOther" rows="4" cols="80"></textarea>
+          </label><br></p>
+          <p>農業に就きたいと思いますか？: <br>
+             <label><input type="radio" name="wantToWork" value="1">はい</input></label>
+             <label><input type="radio" name="wantToWork" value="2">どちらかと言えばはい</input></label>
+             <label><input type="radio" name="wantToWork" value="3">どちらとも言えない</input></label>
+             <label><input type="radio" name="wantToWork" value="4">どちらかと言うといいえ</input></label>
+             <label><input type="radio" name="wantToWork" value="5">いいえ</input></label>
+          </p>
+          <p><label>それはなぜですか？ <br>
+            <textarea name="wantToWorkReason" rows="4" cols="80"></textarea>
+          </label><br></p>
+          <p><label>いいえ、どちらかと言えばいいえ、と答えた方<br>
+            どのように変化したら農業に就きたいと思いますか？<br>
+            <textarea name="wantToWorkIf" rows="4" cols="80"></textarea>
+          </label><br></p>
           </div>
-          <p class="text-contents">オープンソースの動的なプログラミング言語で、 シンプルさと高い生産性を備えています。大きなWebアプリケーションから小さな日用ツールまで、さまざまなソフトウェアを作ることができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/php.png">
-            <p>PHP</p>
+        </section>
+
+      　<section>
+          <h3>4. スマート農業に対するイメージ</h3>
+          <div class="questions">
+            <p>スマート農業を知っていますか？ <br>
+              <label><input type="radio" name="home" value="0">はい</input></label>
+              <label><input type="radio" name="home" value="1">いいえ</input></label>
+            </p>
+            <p>はいと答えた方: <br>
+            どのようなイメージを持ちますか？</p>
+            <p>かっこいい: <br>
+               <label><input type="radio" name="impressionS1" value="1">そう思う</input></label>
+               <label><input type="radio" name="impressionS1" value="2">まあそう思う</input></label>
+               <label><input type="radio" name="impressionS1" value="3">あまりそう思わない</input></label>
+               <label><input type="radio" name="impressionS1" value="4">そう思わない</input></label>
+            </p>
+            <p>難しそう: <br>
+               <label><input type="radio" name="impressionS2" value="1">そう思う</input></label>
+               <label><input type="radio" name="impressionS2" value="2">まあそう思う</input></label>
+               <label><input type="radio" name="impressionS2" value="3">あまりそう思わない</input></label>
+               <label><input type="radio" name="impressionS2" value="4">そう思わない</input></label>
+            </p>
+            <p>作業の省力化ができる: <br>
+               <label><input type="radio" name="impressionS3" value="1">そう思う</input></label>
+               <label><input type="radio" name="impressionS3" value="2">まあそう思う</input></label>
+               <label><input type="radio" name="impressionS3" value="3">あまりそう思わない</input></label>
+               <label><input type="radio" name="impressionS3" value="4">そう思わない</input></label>
+            </p>
+            <p>最先端技術である: <br>
+               <label><input type="radio" name="impressionS4" value="1">そう思う</input></label>
+               <label><input type="radio" name="impressionS4" value="2">まあそう思う</input></label>
+               <label><input type="radio" name="impressionS4" value="3">あまりそう思わない</input></label>
+               <label><input type="radio" name="impressionS4" value="4">そう思わない</input></label>
+            </p>
+            <p>費用が掛かる: <br>
+               <label><input type="radio" name="impressionS5" value="1">そう思う</input></label>
+               <label><input type="radio" name="impressionS5" value="2">まあそう思う</input></label>
+               <label><input type="radio" name="impressionS5" value="3">あまりそう思わない</input></label>
+               <label><input type="radio" name="impressionS5" value="4">そう思わない</input></label>
+            </p>
+            <p>データ分析に活用できる: <br>
+               <label><input type="radio" name="impressionS6" value="1">そう思う</input></label>
+               <label><input type="radio" name="impressionS6" value="2">まあそう思う</input></label>
+               <label><input type="radio" name="impressionS6" value="3">あまりそう思わない</input></label>
+               <label><input type="radio" name="impressionS6" value="4">そう思わない</input></label>
+            </p>
+            <p>品質の高い作物ができる: <br>
+               <label><input type="radio" name="impressionS7" value="1">そう思う</input></label>
+               <label><input type="radio" name="impressionS7" value="2">まあそう思う</input></label>
+               <label><input type="radio" name="impressionS7" value="3">あまりそう思わない</input></label>
+               <label><input type="radio" name="impressionS7" value="4">そう思わない</input></label>
+            </p>
+            <p><label>その他: <br>
+              <textarea name="impressionSOther" rows="4" cols="80"></textarea>
+            </label><br></p>
+            <p>スマート農業に興味はありますか？ <br>
+               <label><input type="radio" name="interested" value="1">はい</input></label>
+               <label><input type="radio" name="interested" value="2">どちらかと言えばはい</input></label>
+               <label><input type="radio" name="interested" value="3">どちらかと言うといいえ</input></label>
+               <label><input type="radio" name="interested" value="4">いいえ</input></label>
+            </p>
+            <p><label>それはなぜですか？ <br>
+              <textarea name="interestedReason" rows="4" cols="80"></textarea>
+            </label><br></p>
           </div>
-          <p class="text-contents">HTMLだけではページの内容を変えることはできません。PHPはHTMLにプログラムを埋め込み、それを可能にします。</p>
-        </div>
-      </div>
-      <div class="clear"></div>
-    </div>
-  </div>
-  <div class="message-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>さぁ、あなたもProgateでプログラミングを学んでみませんか?</h2>
-        <h3>Let's learn to code, learn to be creative!</h3>
-      </div>
-      <span class="btn message">さっそく開発する</span>
-    </div>
-  </div>
-  <footer>
-    <div class="container">
-      <img src="https://prog-8.com/images/html/advanced/footer_logo.png">
-      <p>Learn to Code, Learn to be Creative.</p>
-    </div>
-  </footer>
-</body>
+      　</section>
+      <p>
+        <input class="submit" type="submit" name="" value="送信">
+      </p>
+      </form>
+    </main>
+
+    <footer>
+
+    </footer>
+  </body>
 </html>
