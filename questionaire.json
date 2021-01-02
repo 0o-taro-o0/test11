@@ -10,8 +10,8 @@
           "QType"   : {
             "type"   :"回答方法",
             "varName":"変数名",
-            "items"  :,
-            "option" :
+            "items"  :"",
+            "option" :""
           }
         },
         {
@@ -19,8 +19,8 @@
           "QType"   : {
             "type"   :"",
             "varName":"",
-            "items"  :,
-            "option" :
+            "items"  :"",
+            "option" :""
           }
         },
         {
@@ -28,8 +28,8 @@
           "QType"   : {
             "type"   :"",
             "varName":"",
-            "items"  :,
-            "option" :
+            "items"  :"",
+            "option" :""
           }
         }
       ]
@@ -42,8 +42,8 @@
           "QType"   : {
             "type"   :"",
             "varName":"",
-            "items"  :,
-            "option" :
+            "items"  :"",
+            "option" :""
           }
         },
         {
@@ -51,8 +51,8 @@
           "QType"   : {
             "type"   :"",
             "varName":"",
-            "items"  :,
-            "option" :
+            "items"  :"",
+            "option" :""
           }
         }
       ]
