@@ -24,10 +24,10 @@
           }
         },
         {
-          "question": "",
+          "question": "年齢",
           "QType"   : {
-            "type"   :"",
-            "varName":"",
+            "type"   :"textfield",
+            "varName":"age",
             "items"  :"",
             "option" :""
           }
@@ -35,24 +35,24 @@
       ]
     },
     {
-      "sectionTitle":"",
+      "sectionTitle":"section 2だよよよ〜んん",
       "questions":[
         {
-          "question": "",
+          "question": "ランキングうううう",
           "QType"   : {
-            "type"   :"",
-            "varName":"",
-            "items"  :"",
+            "type"   :"ranking",
+            "varName":"rank1",
+            "items"  :[3, "A", "B", "C", "D", "E"],
             "option" :""
           }
         },
         {
-          "question": "",
+          "question": "うんうん、そう思うよ？",
           "QType"   : {
-            "type"   :"",
-            "varName":"",
-            "items"  :"",
-            "option" :""
+            "type"   :"radio",
+            "varName":"think",
+            "items"  :"YYNN",
+            "option" :{"rank1":["0", "1"]}
           }
         }
       ]
