@@ -15,11 +15,11 @@
           }
         },
         {
-          "question": "",
+          "question": "oui ou non",
           "QType"   : {
-            "type"   :"",
-            "varName":"",
-            "items"  :"",
+            "type"   :"radio",
+            "varName":"ouiounon",
+            "items"  :"YN",
             "option" :""
           }
         },
