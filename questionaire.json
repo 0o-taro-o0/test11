@@ -58,9 +58,9 @@ d{
         {
           "question": "うるさいなぁ",
           "QType"   : {
-            "type"    : "textarea",
+            "type"    : "select",
             "varName" : "testTxt",
-            "items"   : "",
+            "items"   : ["a", "b", "c", "d"],
             "option"  : ""
           }
         }
