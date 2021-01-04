@@ -1,4 +1,4 @@
-{
+d{
   "title": "アンケートのタイトル",
   "explanation": "アンケートに関する説明",
   "QSections": [
@@ -53,6 +53,15 @@
             "varName":"think",
             "items"  :"YYNN",
             "option" :{"rank1":["0", "1"]}
+          }
+        },
+        {
+          "question": "うるさいなぁ",
+          "QType"   : {
+            "type"    : "textarea",
+            "varName" : "testTxt",
+            "items"   : "",
+            "option"  : ""
           }
         }
       ]
