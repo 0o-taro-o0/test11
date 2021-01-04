@@ -54,6 +54,15 @@
             "items"  :"YYNN",
             "option" :{"rank1":["0", "1"]}
           }
+        },
+        {
+          "question": "うるさいなぁ",
+          "QType"   : {
+            "type"    : "select",
+            "varName" : "testTxt",
+            "items"   : ["a", "b", "c", "d"],
+            "option"  : ""
+          }
         }
       ]
     }
